@@ -3,17 +3,17 @@ import React, { useReducer , useState } from 'react'
 
 const initialState = localStorage.getItem('transactions') 
     ? JSON.parse(localStorage.getItem('transactions'))
-    : { transactions: [] /* ,...initialState */ }
+    : { transactions: [] }
 
 export const contextData = React.createContext();
 
 const Reducer = (state , action) => {
     switch (action.type) {
       case 'ADD':
-          return {
-              ...state,
-              transactions: [...state.transactions, action.payLoad]
-          };
+        return {
+          ...state,
+          transactions: [...state.transactions, action.payLoad]
+        }; break
       case "DELETE":
         return {
           ...state,
@@ -21,7 +21,7 @@ const Reducer = (state , action) => {
             (transaction) => transaction.id !== action.payLoad
           ),
         };
-      case "EDIT":
+      case "EDIT":  
         return {
           ...state,
           transactions: [
@@ -31,7 +31,8 @@ const Reducer = (state , action) => {
                 : tran
             )
           ],
-        };
+        }; break
+        
       default: return state;
     }
 };
@@ -40,7 +41,7 @@ const Reducer = (state , action) => {
 const GlobalState = ({children}) => {
     const [state, dispatch] = useReducer(Reducer, initialState);
     const [editObj, setEditObj] = useState({})
-    console.log(editObj);
+    console.log(state);
 
     React.useEffect(() => {
         localStorage.setItem('transactions', JSON.stringify(state))

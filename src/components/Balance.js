@@ -16,8 +16,8 @@ export const Balance = () => {
         <h4>Your Balance</h4>
         <h1
           style={total > 0
-            ? { color: "#0ec55a", textShadow: "3px 3px 4px rgb(99, 233, 99)" }
-            : { color: "#d5484f", textShadow: "3px 3px 4px rgb(243, 142, 142" }
+            ? { color: "#0ec55a", textShadow: "3px 3px 5px rgb(99, 233, 99)" }
+            : { color: "#d5484f", textShadow: "3px 3px 5px rgb(243, 142, 142" }
           }
         >
           { total > 0 ? `$${total}` : `-$${Math.abs(total).toFixed(2)}` }

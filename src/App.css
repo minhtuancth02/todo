@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
 :root {
-  --box-shadow:0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1);
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1);
+  --light-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -10,7 +9,7 @@
 }
 
 body {
-  background-color:hsl(217, 24%, 93%);
+  background-color: hsl(210, 14%, 95%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,14 +21,14 @@ body {
 
 .container {
   margin: 30px auto;
-  width: 350px;
+  width: 400px;
 }
 
 h1 {
   letter-spacing: 1px;
   margin: 0;
-  /* color: rgb(53, 168, 202);
-  text-shadow: 3px 3px 5px hsl(184, 91%, 68%); */
+  color: rgb(53, 168, 202);
+  text-shadow: 3px 3px 5px hsl(184, 91%, 68%);
 }
 
 h2 {
@@ -44,12 +43,13 @@ h3 {
 }
 
 h4 {
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 .inc-exp-container {
-  background-color: rgba(255, 255, 255, 0.371);
+  background-color: rgba(255, 255, 255, 0.302);
+  border-radius: 5px;
   box-shadow: var(--box-shadow);
   padding: 20px;
   display: flex;
@@ -57,52 +57,63 @@ h4 {
   margin: 20px 0;
 }
 
-.inc-exp-container > div {
+.inc-exp-container>div {
   flex: 1;
   text-align: center;
 }
 
-.inc-exp-container > div:first-of-type {
-  border-right: 1px solid #a89f9f;
+.inc-exp-container>div:first-of-type {
+  border-right: 1px solid #9e9d9d;
 }
 
 .money {
-  font-size: 20px;
+  font-size: 17px;
   letter-spacing: 1px;
   margin: 5px 0;
 }
 
+.date {
+  display: inline-block;
+  font-size: smaller;
+  font-weight: 500;
+  font-style: italic;
+  color: rgb(40, 132, 160);
+  text-shadow: 3px 3px 6px hsl(184, 55%, 60%);
+  margin-top: 30px;
+}
+
 .money.plus {
-  color: #0ec55a;
-  text-shadow: 3px 3px 4px rgb(99, 233, 99);
+  color: #13af54;
+  font-weight: 500;
+  text-shadow: 3px 3px 5px rgb(99, 233, 99);
 }
 
 .money.minus {
-  color:  #d5484f;
-  text-shadow: 3px 3px 4px rgb(243, 142, 142);
+  color: #df373f;
+  font-weight: 500;
+  text-shadow: 3px 3px 5px rgb(253, 147, 147);
 }
 
 label {
   display: inline-block;
-  margin: 10px 0;
+  margin: 11px 0;
   font-style: italic;
-  color: rgb(43, 151, 184);
-  text-shadow: 3px 3px 5px hsl(184, 88%, 68%)
+  color: rgb(40, 132, 160);
+  text-shadow: 3px 3px 6px hsl(184, 55%, 60%)
 }
 
-input[type='text'],
-input[type='number'] {
+input[type='text'], input[id='date'], input[type='number'] {
   border: 1px solid #dedede;
-  border-radius: 2px;
   display: block;
-  font-size: 16px;
-  padding: 10px;
+  font-size: 15px;
+  padding: 11px;
   width: 100%;
 }
 
 .btn {
   cursor: pointer;
-  background-color: hsl(185, 77%, 34%);
+  background-color: hsl(185, 75%, 33%);
+  border-radius: 3px;
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
@@ -113,44 +124,39 @@ input[type='number'] {
   width: 100%;
 }
 
-.btn:focus,
-.delete-btn:focus {
+.btn:focus, .delete-btn:focus {
   outline: 0;
 }
 
 .list {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 40px;  
 }
 
 .list li {
-  background-color: #fff;
+  background-color: rgb(245, 241, 241);
   box-shadow: var(--light-shadow);
-  color: #333;
+  color: rgb(70, 67, 67);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 11px;
-  margin: 12px 34px;
-  width: 270px;
+  padding: 10px;
+  margin: 11px 30px;
   list-style-type: none;
 }
 
 .list li.plus {
-  border-right: 5px solid #15cc62;
-  
+  border-right: 5px solid #17c25e;
 }
 
 .list li.minus {
-  border-right: 5px solid  #DE2A33;
-  
+  border-right: 5px solid #DE2A33;
 }
 
 .delete-btn {
   cursor: pointer;
-  background-color: #e74c3c;
+  background-color: #eb3e2b;
   border: 0;
   color: #fff;
   font-size: 22px;
